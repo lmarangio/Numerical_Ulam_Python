@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 from __future__ import division
 import numpy as np
-import xgboost as xgb
+#import xgboost as xgb
 from numpy.linalg import norm
 from numpy.linalg import pinv
 from math import trunc
@@ -10,7 +10,7 @@ import scipy.sparse as sparse
 from scipy.optimize import minimize
 from scipy.linalg import eig
 import matplotlib.pyplot as plt
-from sklearn.neural_network import MLPRegressor
+#from sklearn.neural_network import MLPRegressor
 
 from boxesfun import* 
 from samplefun import*
@@ -29,12 +29,12 @@ An algorithm to compute the stationary measure of an approximation of the transf
 N = len(x)
 d = 1
 delta = 0.01
-#f = fA
+f = fA
 #Orbit generation 
-#x = np.zeros((N,1))
-#x[0] = 0.8
-#for i in range (1,N):
-#	x[i] = f(x[i-1][0])
+x = np.zeros((N,1))
+x[0] = 0.8
+for i in range (1,N):
+	x[i] = f(x[i-1][0])
 
 P = computeUlam(x ,delta, d)
 			
